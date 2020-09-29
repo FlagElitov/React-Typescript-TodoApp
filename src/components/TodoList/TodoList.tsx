@@ -41,7 +41,8 @@ const TodoList: React.FC<todoListProps> = ({ todo, onToggle, onRemove, deleteAll
 				)
 
 			})}
-			<button onClick={deleteAll} className="waves-effect waves-light btn">Удалить все</button>
+			{todo.length > 1 && <button onClick={deleteAll} className="waves-effect waves-light btn">Удалить все</button>}
+
 
 
 		</ul>

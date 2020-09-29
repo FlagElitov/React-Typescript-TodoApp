@@ -42,15 +42,17 @@ const TodoPages: React.FC = () => {
 	}
 
 	const removeHandler = (id: number) => {
-		const shouldRemove = confirm('Ви точно хотите удалить ?')
-		if (shouldRemove) {
-			setTodo(prev => prev.filter(todo => todo.id !== id))
-		}
+
+		setTodo(prev => prev.filter(todo => todo.id !== id))
+
 	}
 
 	const deleteAll = () => {
-		if (todo.length > 0)
+		const shouldRemove = confirm('Ви точно хотите все удалить ?')
+		if (shouldRemove) {
 			setTodo([])
+		}
+
 	}
 	return (
 		<>
