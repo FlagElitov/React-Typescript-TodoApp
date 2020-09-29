@@ -1,13 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import AboutPages from './components/pages/AboutPages';
 import TodoPages from './components/pages/TodoPages';
 
 
 const App: React.FC = () => {
-
 
   return (
     <div>

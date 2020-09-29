@@ -1,28 +1,31 @@
 .px1{
   padding: 0 1rem;
 }
+.mt1{
+  margin-top: 20px;
+}
 
 .container{
   margin-top:40px;
 }
 .todo{
   margin-bottom: 1rem;
-}
-
-.todo.completed span{
-  text-decoration: line-through;
-}
-
-.todo label {
-  width: 100%;
+  &.completed{
+    span{
+      text-decoration: line-through;
+    }
+  }
+  label{
+    width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   padding: 1rem;
   background: #f3f3f3;
+  }
+  i{
+    z-index: 2;
+  }
 }
 
-.todo i{
-  z-index: 2;
-}
