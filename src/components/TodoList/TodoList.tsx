@@ -4,10 +4,11 @@ type todoListProps = {
 	todo: ITodo[],
 	onToggle: (id: number) => void,
 	onRemove: (id: number) => void,
+	deleteAll: () => void
 
 }
 
-const TodoList: React.FC<todoListProps> = ({ todo, onToggle, onRemove }) => {
+const TodoList: React.FC<todoListProps> = ({ todo, onToggle, onRemove, deleteAll }) => {
 
 	const removeHandler = (event: React.MouseEvent, id: number) => {
 		event.preventDefault()
@@ -25,7 +26,6 @@ const TodoList: React.FC<todoListProps> = ({ todo, onToggle, onRemove }) => {
 					classes.push('completed')
 				}
 				return (
-
 					<li key={todo.id}
 						className={classes.join(' ')}
 						onClick={() => onToggle(todo.id)}>
@@ -41,9 +41,13 @@ const TodoList: React.FC<todoListProps> = ({ todo, onToggle, onRemove }) => {
 				)
 
 			})}
+			<button onClick={deleteAll} className="waves-effect waves-light btn">Удалить все</button>
+
 
 		</ul>
+
 	)
+
 }
 
 export default TodoList

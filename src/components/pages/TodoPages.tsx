@@ -47,10 +47,15 @@ const TodoPages: React.FC = () => {
 			setTodo(prev => prev.filter(todo => todo.id !== id))
 		}
 	}
+
+	const deleteAll = () => {
+		if (todo.length > 0)
+			setTodo([])
+	}
 	return (
 		<>
 			<TodoForm onAdd={addHandler} />
-			<TodoList todo={todo} onToggle={toggleHandler} onRemove={removeHandler} />
+			<TodoList todo={todo} onToggle={toggleHandler} onRemove={removeHandler} deleteAll={deleteAll} />
 		</>
 	)
 }
